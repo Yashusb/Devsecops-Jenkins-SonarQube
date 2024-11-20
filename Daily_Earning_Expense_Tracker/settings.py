@@ -74,12 +74,12 @@ WSGI_APPLICATION = 'Daily_Earning_Expense_Tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'expense_tracker_db',  
-        'USER': 'root',    
-        'PASSWORD': 'Ganavisb@123',  
-        'HOST': 'localhost',           
-        'PORT': '3306',               
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'earing_tracker_application_db',  
+        'USER': 'admin',
+        'PASSWORD': 'Yashusb123',
+        'HOST': 'dailyearning.chwlezgyi7rm.eu-west-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
