@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a=-pna(u63-%jr1&ocr7uf_e6ywn$ny9k8ju6@!cvvd91lro9k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.31.12.112' ,'local host']
 
 
 # Application definition
@@ -80,8 +80,13 @@ DATABASES = {
         'PASSWORD': 'Yashusb123',
         'HOST': 'dailyearning.chwlezgyi7rm.eu-west-1.rds.amazonaws.com',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        }
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
