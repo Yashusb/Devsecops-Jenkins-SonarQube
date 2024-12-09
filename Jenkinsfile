@@ -38,11 +38,11 @@ pipeline {
             steps {
                 script {
                     // Sending an email report
-                    emailext(
+                    emailext
+                    (
                         subject: "SonarQube Analysis Report",
                         body: "SonarQube analysis for your project has been completed. Check the report at: http://34.241.174.22:9000/dashboard?id=sonarserver",
-                        to: 'x23336641@student.ncirl.ie'
-                
+                        to: 'x23336641@student.ncirl.ie')
                 }
             }
         }
