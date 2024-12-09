@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Running SonarQube analysis
-                    withSonarQubeEnv('Yashvanth-sonar') { // Ensure this matches the name in SonarQube settings
+                    withSonarQubeEnv('YashuSoanrQube') { // Ensure this matches the name in SonarQube settings
                         sh "/opt/sonar-scanner/bin/sonar-scanner \
                             -Dsonar.projectKey=Sonar-jenkins \
                             -Dsonar.sources=. \
