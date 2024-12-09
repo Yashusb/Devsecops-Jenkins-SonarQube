@@ -20,7 +20,7 @@ pipeline {
                 script {
                     // Running SonarQube analysis
                     withSonarQubeEnv('YashuSonar') { // Ensure this matches the name in SonarQube settings
-                        sh "/opt/sonar-scanner/bin/sonar-scanner \
+                        sh "//opt/sonar-scanner \
                             -Dsonar.projectKey=Sonar-jenkins \
                             -Dsonar.sources=. \
                             -Dsonar.host.url=http://34.249.250.122:9000 \
