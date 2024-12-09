@@ -8,8 +8,8 @@ pipeline {
                 $class: 'GitSCM',
                 branches: [[name: '*/main']],
                 userRemoteConfigs: [[
-                    url: 'https://github.com/Yashusb/Devsecops.git',
-                    credentialsId: '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'
+                    url: 'https://Yashusb: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@github.com/Yashusb/Devsecops.git',
+                    credentialsId: 'Git-token-new'
                 ]]
             ]
         }      
