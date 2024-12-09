@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Cloning the repository
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/Yashusb/Devsecops.git'
+                git branch: 'main', credentialsId: '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', url: 'https:Yashusb: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@github.com/Yashusb/Devsecops.git'
             }    
         }
         stage('SonarQube Analysis') {
@@ -34,18 +34,14 @@ pipeline {
                 }
             }
         }
-           stage('Deploy Application') 
-           {
-            steps 
-            {
-                sshagent(['yashudev.pem']) 
-                {
-                    sh '''
-                    ssh ec2-user@3.254.61.67 << EOF
-                    cd /home/ubuntu/Devsecops
-                    git pull origin main
-                    source venv/bin/activate
-                    python manage.py migrate
+           stage('Email Notification') {
+            steps {
+                script {
+                    // Sending an email report
+                    emailext(
+                        subject: "SonarQube Analysis Report",
+                        body: "SonarQube analysis for your project has been completed. Check the report at: http://34.241.174.22:9000/dashboard?id=sonarserver",
+                        to: 'x23336641@student.ncirl.ie'
                 
                 }
             }
