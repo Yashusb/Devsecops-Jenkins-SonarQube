@@ -24,7 +24,7 @@ pipeline {
                             -Dsonar.projectKey=Sonar-jenkins \
                             -Dsonar.sources=. \
                             -Dsonar.host.url=http://34.249.250.122:9000 \
-                            -Dsonar.login=ssqu_66de582069b1811add5c2a8e72e0bdf40202d18f"
+                            -Dsonar.login=squ_5e0837d2645e7e132d92e502729fb841d00982f7"
                     }
                 }
             }
