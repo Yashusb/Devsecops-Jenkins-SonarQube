@@ -29,30 +29,30 @@ pipeline {
                 }
             }
         }
-        // stage('Quality Gate') {
-        //     steps {
-        //         script {
-        //             // Wait for the quality gate result
-        //             timeout(time: 5, unit: 'MINUTES') {
-        //                 def qg = waitForQualityGate()
-        //                 if (qg.status != 'OK') {
-        //                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        //    stage('Email Notification') {
-        //     steps {
-        //         script {
-        //             // Sending an email report
-        //             emailext
-        //             (
-        //                 subject: "SonarQube Analysis Report",
-        //                 body: "SonarQube analysis for your project has been completed. Check the report at: http://34.241.174.22:9000/dashboard?id=sonarserver",
-        //                 to: 'x23336641@student.ncirl.ie')
-        //         }
-        //     }
-        // }
+        stage('Quality Gate') {
+             steps {
+                 script {
+                     // Wait for the quality gate result
+                     timeout(time: 5, unit: 'MINUTES') {
+                         def qg = waitForQualityGate()
+                         if (qg.status != 'OK') {
+                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                         }
+                     }
+                 }
+             }
+         }
+            stage('Email Notification') {
+             steps {
+                 script {
+                     // Sending an email report
+                     emailext
+                     (
+                         subject: "SonarQube Analysis Report",
+                         body: "SonarQube analysis for your project has been completed. Check the report at: http://34.241.174.22:9000/dashboard?id=sonarserver",
+                         to: 'x23336641@student.ncirl.ie')
+                 }
+             }
+         }
     }
 }
